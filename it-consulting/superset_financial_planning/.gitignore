@@ -1,0 +1,15 @@
+# Local / secrets
+.env
+*.env
+*.secret
+credentials.*
+secrets/
+config.local.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

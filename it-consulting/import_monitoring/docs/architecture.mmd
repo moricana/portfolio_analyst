@@ -1,0 +1,13 @@
+flowchart TD
+    A[Source Systems] --> B[PowerShell Automation]
+    B --> C[Financial Management Application]
+    C --> D[Database]
+    C --> E[Application Logs]
+    E --> F[SQL Monitoring]
+    F --> G{Incident detected?}
+    G -->|Explicit error| H[Incident]
+    G -->|Missing completion| H
+    H --> I[Responsible User / Further Notification]
+
+    J[System Settings] --> B
+    K[Import Configuration<br/>Responsible + Check Period] --> F
