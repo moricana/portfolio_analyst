@@ -1,77 +1,61 @@
 # E-commerce Operations Automation
 
-**Business / Data Analyst · Python · Pandas · OpenPyXL · SQL**
+**Role focus:** Data Analyst / Operations Analyst  
+**Tools:** Python, pandas, openpyxl, PyYAML, CSV/Excel  
+**Data status:** sample inputs are illustrative; scripts are intended as local demos.
 
-## Overview
+## Business problem
 
-Built lightweight automation tools to reduce repetitive operations around marketplace data: order/invoice matching, product normalization, actual-price updates and store-specific price/inventory feeds.
+Repeated spreadsheet workflows can introduce manual errors and consume time. This case demonstrates how small scripts can make selected transformations repeatable, reviewable and easier to validate.
 
-## Problem
+## Workflows
 
-Several operational processes required repeated manual work in Excel / CSV files. The goal was to turn them into repeatable, script-based workflows.
+### 1. Order–invoice matching
 
-## 1. Order–Invoice Matching
+Extract order numbers from invoice descriptions and create an order-to-invoice mapping workbook. Duplicate order/invoice pairs are skipped; missing input files and worksheets produce explicit errors.
 
-Extract order numbers from invoice descriptions and generate an explicit **Order Number → Invoice Number** mapping.
+### 2. Product normalization
 
-```text
-Invoice Excel → Regex / Text Parsing → Order Extraction → Mapping Sheet
+Split line-separated serial numbers into one record per serial number, with quantity set to one per serial. Records without serial numbers are retained as untracked inventory rather than assigned fabricated identifiers.
+
+### 3. Price-update SQL generation
+
+Validate the required CSV headers, parse prices as decimal values, reject missing/duplicate order numbers and generate a transaction-wrapped SQL review file. **Review generated statements and verify affected-row counts before execution.** The target table and key are illustrative and must be adapted to the actual schema.
+
+### 4. Price and inventory feeds
+
+Read a two-row-header Excel workbook and generate separate YAML feeds for prices and available quantities per store. Required columns are validated, incomplete rows are filtered according to each feed's own required fields, and negative inventory values are rejected.
+
+## Run locally
+
+From this directory, install dependencies:
+
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-## 2. Product Data Normalization
+Place the relevant input file in the working directory using the expected name shown in each script, then run the script from that directory. For example:
 
-Split multiple serial numbers stored in one row into separate records and adjust quantity to one record per serial number.
-
-```text
-Product X | Qty 3 | A / B / C
-                    ↓
-Product X | A | 1
-Product X | B | 1
-Product X | C | 1
+```bash
+python python/product_normalization.py
 ```
 
-## 3. Automated Price Updates
+Input file names and expected columns are documented in each script. Do not use production data or execute generated SQL without review.
 
-Transform a CSV containing order numbers and actual prices into SQL UPDATE statements for downstream database processing.
+## Data-quality safeguards
 
-```text
-CSV → Read fields → Generate SQL → Batch-ready file
-```
+- Validate input file existence and required columns.
+- Reject missing identifiers and invalid numeric values where appropriate.
+- Detect duplicate order numbers before generating updates.
+- Keep generated files reviewable and avoid publishing real customer, invoice or product identifiers.
 
-## 4. Price & Inventory Feed Generation
+## Limitations
 
-Process a multi-level Excel file and generate separate YAML feeds for each store:
+The included example CSVs are small fixtures, not a representative performance benchmark. These scripts do not replace business approval, database transactions, logging, access control or a production test suite. Before production use, add automated tests for malformed files, duplicate keys, missing values and unexpected source formats.
 
-- SKU;
-- product name;
-- price;
-- old price;
-- available quantity.
+## Skills
 
-```text
-Excel
- ↓
-Split by Store
- ↓
-Price Feed + Inventory Feed
- ↓
-Store-specific YAML files
-```
-
-## My Contribution
-
-- identified repetitive manual operations;
-- designed transformation logic;
-- implemented Python automation;
-- used regex for structured text extraction;
-- normalized operational datasets;
-- generated SQL update statements;
-- generated marketplace price and inventory feeds.
-
-## Technologies
-
-Python · Pandas · OpenPyXL · PyYAML · Regex · SQL · Excel / CSV
-
-## Key Outcome
-
-Converted repetitive spreadsheet operations into repeatable, auditable data-processing workflows.
+Python · pandas · openpyxl · PyYAML · CSV/Excel Processing · Data Validation · Data Transformation · Operational Automation

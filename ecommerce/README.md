@@ -1,32 +1,33 @@
-# E-commerce & Marketplace Portfolio
+# E-commerce & Marketplace Analytics
 
-A selection of Business Analysis, System Analysis, BI and automation cases from e-commerce and marketplace projects.
+A collection of portfolio cases covering marketplace profitability, retail analysis, operational automation and platform architecture.
 
-## Cases
+## Projects
 
-### 01 — E-commerce Marketplace Platform Architecture
-**Business / System Analysis · APIs · Microservices · Architecture**
+### 1. [Marketplace Profitability & Operations Analytics](02-profitability_analytics/README.md)
+**PostgreSQL · SQL · Apache Superset**
 
-High-level system architecture connecting users, API gateways, order and billing services, warehouse operations, notifications, analytics and external providers.
+A BI case for examining sales, marketplace costs, profitability, budget variance and returns. Includes a SQL analytical dataset and dashboard screenshots built with illustrative data.
 
-[Open case →](01-platform_architecture/README.md)
+### 2. [Retail Loss Analysis](04-retail_loss/README.md)
+**Python · pandas · NumPy · Matplotlib**
 
-### 02 — Marketplace Profitability & Operations Analytics
-**Business / Data Analysis · SQL · Apache Superset**
+An exploratory analysis of synthetic retail data across three questions: revenue decline, promotion performance and refunds. The notebook demonstrates the workflow and explicitly distinguishes descriptive comparisons from causal conclusions.
 
-BI dashboards for sales, turnover, profit, commissions, returns, budget performance and operational analysis.
+### 3. [E-commerce Operations Automation](03-operations_automation/README.md)
+**Python · pandas · openpyxl · PyYAML**
 
-[Open case →](02-profitability_analytics/README.md)
+Small utilities for order/invoice matching, serial-number normalization, price-update file generation and store-specific feeds.
 
-### 03 — E-commerce Operations Automation
-**Python · SQL · Pandas · OpenPyXL · Data Transformation**
+### 4. [Marketplace Platform Architecture](01-platform_architecture/README.md)
+**System analysis · Architecture · Integrations**
 
-Automation of order/invoice matching, product normalization, price updates and marketplace feed generation.
-
-[Open case →](03-operations_automation/README.md)
+A high-level architecture case documenting service boundaries and data exchange across marketplace operations.
 
 ## Skills
-Business Analysis · System Analysis · Requirements Engineering · SQL · Python · BI · Apache Superset · APIs · Data Transformation · Process Automation · E-commerce · Marketplace Operations
 
-## Portfolio Note
-Public examples are sanitized and/or based on test data. Production credentials, internal IDs and confidential connection details are not included.
+SQL · Python · Data Cleaning · Data Quality · KPI Design · BI Reporting · Financial Analytics · Process Automation · Requirements Analysis
+
+## Data policy
+
+Examples are synthetic, anonymized or sanitized. No production credentials, personal data or confidential business identifiers should be published.

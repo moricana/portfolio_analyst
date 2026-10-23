@@ -60,6 +60,19 @@ The SQL layer:
 
 See [`sql/financial_analytics_dataset.sql`](sql/financial_analytics_dataset.sql).
 
+## Data model and validation considerations
+
+The SQL view is a demonstration of the transformation approach, not a plug-and-play production model. Before using an equivalent view, confirm:
+
+- **Grain:** whether each source row represents a transaction, transaction line, account movement or budget line.
+- **Cash-flow sign convention:** inflows are positive and outflows negative in the analytical output; internal transfers may appear as both an outflow and inflow at account level and should net to zero only when grouped consistently.
+- **Currency:** amounts in different currencies must not be summed together without a documented conversion rate and reporting-currency policy.
+- **Budget mapping:** a non-null budget dimension is not necessarily sufficient to classify a row as planned; use an explicit plan/actual flag if the source provides one.
+- **Join cardinality:** dimension keys should be unique. Validate row counts and totals before and after joins to avoid duplicated amounts.
+- **Reconciliation:** compare monthly and account-level totals against source-system reports for a known period.
+
+See [`docs/data_model.md`](docs/data_model.md) and [`docs/dashboard_structure.md`](docs/dashboard_structure.md) for the current model and dashboard notes.
+
 ## Dashboards
 
 ### 1. Cash Flow Management
@@ -130,4 +143,4 @@ The dashboard was designed not only for reporting, but to support financial deci
 
 The original project used internal enterprise data. This repository contains only a **sanitized portfolio version**. Real company names, projects, internal IDs, database objects and source values are intentionally excluded.
 
-Any screenshots published with this repository should also be anonymized before uploading.
+The published dashboard screenshots are illustrative portfolio visuals. Review them for residual identifiers and confirm that the displayed values are not presented as verified production outcomes.
