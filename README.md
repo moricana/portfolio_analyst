@@ -1,6 +1,6 @@
-# Data Analytics Portfolio
+# Analytics Portfolio
 
-**Anastasia Mori · Data Analyst | BI Analyst**
+**Anastasia Mori · Product & Business Data Analyst | BI Analyst**
 
 SQL, Python and BI projects focused on turning operational and financial data into reliable reporting and actionable business insights.
 
