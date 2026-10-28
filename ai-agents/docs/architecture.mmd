@@ -1,0 +1,25 @@
+flowchart TD
+    U[User request] --> T[Tool-calling agent]
+    T --> S[Search products tool]
+    S --> T
+    T --> C[Cart tool, when requested]
+    C --> T
+    T --> A[Response to user]
+
+    U2[User request + preferences] --> M[Memory agent]
+    M --> P[Load/update JSON profile]
+    P --> M
+    M --> H[Conversation history]
+    H --> M
+    M --> R[Personalized response]
+
+    U3[Recommendation request] --> CO[Coordinator agent]
+    CO --> RET[Retriever agent]
+    RET --> PRO[Pros agent]
+    RET --> CON[Cons agent]
+    PRO --> RK[Ranker agent]
+    CON --> RK
+    RK --> CO
+    CO --> CART[Optional cart action]
+    CART --> OUT[Final recommendation]
+    CO --> OUT

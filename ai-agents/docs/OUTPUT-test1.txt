@@ -1,0 +1,40 @@
+/usr/local/lib/python3.12/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+⏳ Запускаем ноутбук...
+============================================================
+
+── Part 0: Template ─────────────────────────────────────
+  ✅ CATALOG: 10 products
+  ✅ CATALOG: IDs p1..p10
+  ✅ CATALOG: prices > 0
+  ✅ CATALOG: ratings 1-5
+  ✅ CATALOG: 5 categories
+  ✅ ShopTools: search by category
+  ✅ ShopTools: search by price
+  ✅ ShopTools: search by brand
+  ✅ ShopTools: sort by price
+  ✅ ShopTools: sort by rating
+  ✅ ShopTools: add to cart
+  ✅ ShopTools: repeated add
+  ✅ ToolTracer: record and check
+  ✅ AgentContext: pros and cons fields
+
+── Part 3: Multi-Agent System ───────────────────────────
+  ✅ Return type AgentResult
+  ✅ RankerAgent: best by rating
+  ✅ RankerAgent: price tie-break
+  ❌ RankerAgent: no candidates in budget -> None
+     All over max_price, best should be None: {'id': 'x', 'name': 'X', 'price': 100, 'rating': 4.5}
+  ✅ RankerAgent: respects max_price
+  ✅ Full trace (all 5 delegates)
+  ✅ No add request — no delegate_cart
+  ✅ Best mouse under $120 -> p6
+  ✅ ctx.pros and ctx.cons filled
+  ✅ Response contains analysis result
+
+══════════════════════════════════════════════════
+RESULT: 9/10 tests passed
+Score: ~90%
+⚠️  Failed: 1
+══════════════════════════════════════════════════
+
