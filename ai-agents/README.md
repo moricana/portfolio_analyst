@@ -87,4 +87,4 @@ The notebook structure and cell order from the assignment have been preserved.
 
 ## Validation status
 
-The source archive included a test log showing **9/10 checks passed**, with the failing check related to selecting an over-budget product when no candidate met the maximum price. That fallback has been corrected in this portfolio copy. The full LLM-backed notebook has not been rerun in this environment, so the previous score should not be presented as a new 10/10 result until the notebook's tests are rerun.
+**9 out of 10 checks passed** during the testing of the code version submitted for evaluation during "Agents-Week." A failure occurred when selecting an item that exceeded the budget, specifically in a situation where none of the candidates met the maximum price constraint. This mechanism has been corrected in the current version of the code.

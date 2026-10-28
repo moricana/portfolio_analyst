@@ -1,6 +1,6 @@
-# Data Analytics Portfolio
+# Product & Business Data Analyst Portfolio
 
-**Anastasia Mori · Data Analyst | BI Analyst**
+**Anastasia Mori · Product & Business Data Analyst**
 
 SQL, Python, BI and AI-agent projects focused on turning operational, financial and product-related data into reliable reporting, useful business insights and practical automation.
 
@@ -16,7 +16,7 @@ SQL, Python, BI and AI-agent projects focused on turning operational, financial 
 | [E-commerce Operations Automation](ecommerce/03-operations_automation/README.md) | How can repetitive spreadsheet processes be made repeatable? | Python, pandas, openpyxl, PyYAML | Data cleaning, validation, matching, file generation |
 | [Automated Data Import Monitoring](it-consulting/import_monitoring/README.md) | How can failed or incomplete data imports be detected? | SQL Server, PowerShell | Log analysis, monitoring rules, incident detection |
 | [Marketplace Platform Architecture](ecommerce/01-platform_architecture/README.md) | How do operational services exchange data? | System analysis, architecture diagrams | System context, integrations, service boundaries |
-| [AI Shopping Assistant — Agents Week](ai-agents/README.md) | How can LLM agents support product discovery and personalized recommendations? | Python, Jupyter Notebook, LangChain tool abstractions, JSON | Tool calling, conversational memory, multi-agent orchestration, budget-aware ranking |
+| [AI Shopping Assistant — Agents Week](ai-agents/ecommerce-shopping-assistant/README.md) | How can LLM agents support product discovery and personalized recommendations? | Python, Jupyter Notebook, LangChain tool abstractions, JSON | Tool calling, conversational memory, multi-agent orchestration, budget-aware ranking |
 
 ## AI Agents & Product Automation
 
